@@ -13,6 +13,16 @@ function increaseRankBy(n){
   }
 }
 
+//function deepestChild(){
+  //return document.querySelectorAll("#grand-node div div div div")[0]
+//}
+
 function deepestChild(){
-  return document.querySelectorAll("#grand-node div div div div")[0]
+    var lst = document.getElementById("grand-node").querySelectorAll("div")
+    for(var i = 0; i<lst.length; i++){
+        var current = lst[i].querySelectorAll("div")
+        if(current.length === 1){
+            return current[0]
+        }
+    }
 }
