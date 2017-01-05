@@ -13,16 +13,7 @@ function increaseRankBy(n){
   }
 }
 
-//function deepestChild(){
-  //return document.querySelectorAll("#grand-node div div div div")[0]
-//}
-
+//using query selector all returns a node list: need to use querySelector here to return just the element. That's why the error message!
 function deepestChild(){
-    var lst = document.getElementById("grand-node").querySelectorAll("div")
-    for(var i = 0; i<lst.length; i++){
-        var current = lst[i].querySelectorAll("div")
-        if(current.length === 1){
-            return current[0]
-        }
-    }
+  return document.querySelector("#grand-node div div div div")
 }
